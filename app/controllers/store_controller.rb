@@ -8,6 +8,17 @@
 #---
 class StoreController < ApplicationController
   def index
+  	puts "store index"
     @products = Product.order(:title)
+    puts @products[1]						# #<Product:0000000000>
+    # puts @products[1].has_key?(price)   	# no hash
+    puts @products[2].titles   				# Rails Test Prescriptions
+    puts [1, 2, 3]
+
+
+    puts @products.class					
+    puts @products.superclass
+    puts @products.count
+    puts @products.length
   end
 end

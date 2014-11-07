@@ -10,6 +10,13 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    puts params
+    puts params.class
+    # puts params.superclass   # error
+    puts params.length
+    puts params.size
+    # puts Parameters          # error
+    puts params[:action]
   end
 
   # GET /carts/new
