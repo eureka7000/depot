@@ -10,9 +10,10 @@ class StoreController < ApplicationController
   def index
   	puts "store index"
     @products = Product.order(:title)
+    @cart = current_cart
     puts @products[1]						# #<Product:0000000000>
     # puts @products[1].has_key?(price)   	# no hash
-    puts @products[2].titles   				# Rails Test Prescriptions
+    # puts @products[1].titles   				# Rails Test Prescriptions
     puts [1, 2, 3]
 
 

@@ -1,0 +1,11 @@
+//#START_HIGHLIGHT
+<% puts "creat.js.erb1" %>
+
+<% puts "creat.js.erb2" %>
+$('#cart').html("<%= escape_javascript render(@cart) %>")
+<% puts "creat.js.erb3" %>
+$('#current_item').css({'background-color':'#44ff44'})
+<% puts "creat.js.erb4" %>
+$('#cart').show();
+<% puts "creat.js.erb5" %>
+
