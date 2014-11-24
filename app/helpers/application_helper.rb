@@ -12,11 +12,9 @@ module ApplicationHelper
     if condition
       puts "empty cart"
       attributes["style"] = "display: none"
-      content_tag("div", attributes, &block)
-    else
-      puts "content_tag"
-      content_tag("div", attributes, &block)
     end
+    puts "content_tag"
+    content_tag("div", attributes, &block)
     # puts "content_tag"
     # content_tag("div", attributes, &block)
     puts attributes

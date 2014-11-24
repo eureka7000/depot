@@ -2,9 +2,9 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<% puts "store_index.html.erb" %>
-
-<h1>Your Pragmatic Catalog</h1>
+<!-- START_HIGHLIGHT -->
+<h1><%= t('.title_html') %></h1>
+<!-- END_HIGHLIGHT -->
 
 <% @products.each do |product| %>
   <div class="entry">
@@ -12,17 +12,11 @@
     <h3><%= product.title %></h3>
     <p><%= sanitize(product.description) %></p>
     <div class="price_line">
-<!-- START:currency -->
       <span class="price"><%= number_to_currency(product.price) %></span>
 <!-- START_HIGHLIGHT -->
-      <%= button_to 'Add to Cart', line_items_path(product_id: product),
+      <%= button_to t('.add_html'), line_items_path(product_id: product),
+# END_HIGHLIGHT
         remote: true %>
-        
-      <% puts product_id: product %>
-      <% puts product %>
-      <% puts line_items_path(product_id: product) %>
-<!-- END_HIGHLIGHT -->
-<!-- END:currency -->
     </div>
   </div>
 <% end %>

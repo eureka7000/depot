@@ -9,8 +9,13 @@
 class StoreController < ApplicationController
   def index
   	puts "store index"
-    @products = Product.order(:title)
-    @cart = current_cart
+    if params[:set_locale]
+      redirect_to store_path(locale: params[:set_locale])
+    else
+      @products = Product.order(:title)
+      @cart = current_cart
+    end
+    
     puts @products[1]						# #<Product:0000000000>
     # puts @products[1].has_key?(price)   	# no hash
     # puts @products[1].titles   				# Rails Test Prescriptions
